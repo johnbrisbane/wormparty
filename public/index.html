@@ -1,43 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Kates Worm Party</title>
+  <link rel="icon" type="image/png" href="images/favicon.png"/>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css"> <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/normalize.css"> <!-- CSS reset -->
+  <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Bootstrap Grid -->
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+  <link rel="stylesheet" href="css/animate.min.css"><!-- Animate -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+  <link rel="stylesheet" href="css/magnific-popup.css"> <!-- Resource style -->
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+:root {
+  --angle: 4deg;
+}
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  .word-container {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  outline: 1px solid red;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    /* Styles */
+  .word {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Montserrat";
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--color, #fff);
+  display: flex;
+  pointer-events: none;
+  user-select: none;
+  line-height: 5.8rem;
+}
+}
+
+.word {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Montserrat";
+  font-size: 9rem;
+  font-weight: 900;
+  color: var(--color, #fff);
+  display: flex;
+  pointer-events: none;
+  user-select: none;
+  line-height: 5.8rem;
+}
+
+.word .char {
+  position: relative;
+  -webkit-text-stroke: 2px #000;
+  transform: translateY(-45%) rotate(var(--angle));
+  animation: up-and-down 2s ease infinite;
+  animation-delay: calc((var(--word-index) * -0.15s) + (var(--char-index) * 0.1s));
+  z-index: calc(-1 * var(--char-index));
+  margin-left: -1.6rem;
+}
+
+@keyframes up-and-down {
+  0%, 100% {
+    transform: translateY(-45%) rotate(var(--angle));
+  }
+  50% {
+    transform: translateY(45%) rotate(var(--angle));
+  }
+}
+</style>
+
+<body>
+
+  <header id="main-nav">
+    <div class="container">
+
+      <a id="navigation" href="#"><i class="fa fa-bars"></i></a>
+
+      <div id="slide_out_menu">
+        <a href="#" class="menu-close"><i class="fa fa-times"></i></a>
+        <div class="logo"><img src="images/logo-white.png" alt="" style="max-height: 100px; max-width: 200px;"></div>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="rsvp.html">RSVP</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+
+        <div class="slide_out_menu_footer">
+          <div class="more-info">
+            <p>Developed by John Brisbane</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <ul class="left">
+            <li><a href="about.html">About</a></li>
+            <li><a href="rsvp.html">RSVP</a></li>
+            <li><a href="location.html">Location</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 text-center">
+          <a href="/" class="logo"><img src="images/logo.png" style="max-height: 50px; max-width: 200px;"></a>
+        </div>
+        <div class="col-md-4">
+          <ul class="right">
+              <li><a href="support.html" class="help">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header><!-- //Main Nav -->
+
+  <section id="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <span class="word-container" data-word="KATES WORM PARTY" data-word-repeat="4" data-text-colors="#26580F,#C5E90B,#378805,#FEFCFE"></span>
+          <script>
+            console.clear();
+
+            const wordContainerEl = document.querySelector("[data-word]");
+            const word = wordContainerEl.getAttribute("data-word");
+            const wordRepeatTimes = wordContainerEl.getAttribute("data-word-repeat");
+            const textColorsArray = wordContainerEl.getAttribute("data-text-colors").split(",");
+            
+            for (let i = 0; i < wordRepeatTimes; i++) {
+              const wordEl = document.createElement("span");
+              wordEl.className = "word";
+              wordEl.style.setProperty("--word-index", i);
+              wordEl.style.setProperty("--color", textColorsArray[i]);
+              for (let j = 0; j < word.length; j++) {
+                const charEl = document.createElement("span");
+                charEl.className = "char";
+                charEl.style.setProperty("--char-index", j);
+                charEl.innerHTML = word[j];
+                wordEl.appendChild(charEl);
+              }
+              wordContainerEl.appendChild(wordEl);
+            }
+            
+            </script>
+
+          <p class="wow fadeInUp" data-wow-delay=".2s"></p>
+          <p style="padding-top: 10%;">The wormiest party in town.</p>
+        </div>
+
+        <!-- Worm -->  
+        <img class="header_iphone wow fadeInUp" src="images/worm.png" alt="" data-wow-delay=".7s">
+        <!-- //Worm -->
+      </div>
+    </div>
+  </section><!-- //Header -->
+
+
+  <footer id="footer">
+    <div class="container footer-container">
+      <div class="row">
+        <div class="col-md-3">
+          <img class="logo" src="images/logo.png" alt="" style="max-height: 50px; max-width: 200px;">
+          <p>A John Brisbane Product.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery-2.1.4.min.js"></script> <!-- jQuery -->
+  <script src="js/bootstrap.min.js"></script>  <!-- Bootstrap -->
+  <script src="js/wow.min.js"></script>  <!-- wow -->
+  <script src="js/jquery.magnific-popup.min.js"></script>  <!-- wow -->
+  <script src="js/main.js"></script>  <!-- Main Script -->
+</body>
 </html>
